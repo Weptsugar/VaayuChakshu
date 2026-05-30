@@ -67,14 +67,22 @@ Create a new Notebook in Kaggle and clone your repository directly into the Kagg
 !pip install -r requirements.txt
 ```
 
-**3. Obtain the Dataset**
-You will need the C2S-MS Floods dataset (or your own Sentinel-1/Sentinel-2 pairs). If you are using the original dataset, download the `data.zip` file (available via [Insert Link to your Kaggle Dataset or Google Drive here]).
+**3. Add the Dataset to Kaggle**
+This project requires the C2S-MS Floods dataset, which has been hosted publicly on Kaggle. 
+In your Kaggle Notebook, click **Add Data** (top right), search for `karthik1438/vaayuchakshudata`, and click the `+` to add it to your environment. (You can view the dataset [here](https://www.kaggle.com/datasets/karthik1438/vaayuchakshudata)).
 
-**4. Upload and Prepare Dataset**
-In Kaggle, click **Add Data -> Upload -> New Dataset**, and upload the `data.zip` file you downloaded. Kaggle will automatically extract it into `/kaggle/input/`. Copy it into the project and generate the manifest:
+**4. Extract and Prepare Dataset**
+Because of a platform restriction, the dataset archive is named `data.txt`. Run the following Python block in your Kaggle notebook to safely extract the data into your project and generate the manifest:
 ```python
-# Copy extracted data from Kaggle Input to your project
-!cp -r /kaggle/input/your-dataset-name/* data/raw/
+import zipfile
+import os
+
+# Extract the archive, enforcing Linux-compatible paths
+print("Extracting dataset...")
+with zipfile.ZipFile('/kaggle/input/vaayuchakshudata/data.txt', 'r') as z:
+    for info in z.infolist():
+        info.filename = info.filename.replace('\\', '/')
+        z.extract(info, ".")
 
 # Generate the data_manifest.csv required for training
 !python scripts/prepare_dataset.py
