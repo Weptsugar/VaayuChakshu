@@ -1,0 +1,38 @@
+# Project and Logging
+project_name: "Flood Monitoring"
+run_name: "resnet34-physics-loss-v2"
+manifest_path: "data/processed/data_manifest.csv"
+
+# Model Hyperparameters
+learning_rate: 0.0002
+adam_beta1: 0.5
+adam_beta2: 0.999
+ema_decay: 0.999
+
+# Scheduler Settings
+scheduler_factor: 0.5
+scheduler_patience: 10
+
+# Discriminator Update Frequency
+discriminator_update_freq: 1
+
+# Loss Weights (Lambdas)
+lambda_l1: 100.0
+lambda_adv: 1.0
+lambda_perc: 10.0
+lambda_speckle: 1.0
+lambda_water: 5.0
+
+# Training Settings
+max_epochs: 200
+batch_size: 8
+accelerator: "auto"
+precision: "16-mixed"
+log_every_n_steps: 25
+
+# Dataset and DataLoader Settings
+num_workers: 0
+cloud_threshold: 10.0
+use_speckle_filter: True
+pin_memory: True
+persistent_workers: False

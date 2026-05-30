@@ -1,0 +1,39 @@
+[project]
+name = "flood-monitoring_sar-to-optical"
+version = "0.1.0"
+description = "Industry-grade SAR-to-Optical colorization for flood monitoring."
+authors = [{ name = "Karthik Raveendran", email = "karthik.raveendran@example.com" }]
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.1.0",
+    "torchvision>=0.16.0",
+    "pytorch-lightning>=2.1.0",
+    "rasterio>=1.3.0",
+    "scikit-image>=0.21.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.7.0",
+    "awscli>=1.29.0",
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "python-multipart>=0.0.6", # Required by FastAPI for file uploads
+    "prometheus-fastapi-instrumentator>=6.0.0",
+    "onnx>=1.15.0",
+    "onnxruntime-gpu>=1.16.0", # Or onnxruntime for CPU-only
+    "wandb>=0.15.0",
+    "pandas>=2.0.0",
+    "tqdm>=4.65.0",
+    "scikit-learn>=1.7.0",
+    "albumentations>=2.0.8",
+    "lightning>=2.5.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+    "pytest>=7.4.0",
+    "jupyterlab>=4.0.0",
+]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W", "I"]

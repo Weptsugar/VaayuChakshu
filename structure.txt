@@ -1,0 +1,54 @@
+.
+├── README.md
+├── config.yaml
+├── data
+│   ├── processed
+│   └── raw
+├── data.zip
+├── inference.py
+├── logs
+│   ├── run_20250627_042548.log
+│   ├── run_20250627_044931.log
+│   ├── run_20250627_045845.log
+│   ├── run_20250627_052123.log
+│   └── run_20250627_054342.log
+├── main.py
+├── monitoring
+│   ├── docker-compose.yml
+│   └── prometheus
+├── notebooks
+│   └── 01_data_exploration.ipynb
+├── outputs
+│   ├── checkpoints
+│   └── results
+├── pyproject.toml
+├── requirements.txt
+├── scripts
+│   ├── explore_data.ipynb
+│   ├── fetch_data.py
+│   ├── prepare_dataset.py
+│   └── verify_image.py
+├── src
+│   ├── __pycache__
+│   ├── data_utils.py
+│   ├── datamodule.py
+│   ├── dataset.py
+│   ├── flood_monitoring_sar_to_optical.egg-info
+│   ├── lightning_module.py
+│   ├── logging_utils.py
+│   ├── losses.py
+│   ├── model.py
+│   └── train.py
+├── structure.txt
+├── uv.lock
+└── wandb
+    ├── debug-internal.log -> run-20250627_054418-a2mzvg46/logs/debug-internal.log
+    ├── debug.log -> run-20250627_054418-a2mzvg46/logs/debug.log
+    ├── latest-run -> run-20250627_054418-a2mzvg46
+    ├── run-20250627_042900-wi0l1xta
+    ├── run-20250627_045017-zod5mmsv
+    ├── run-20250627_050019-1vymelk8
+    ├── run-20250627_052243-f62ed71k
+    └── run-20250627_054418-a2mzvg46
+
+22 directories, 30 files

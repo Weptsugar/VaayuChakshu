@@ -1,0 +1,9 @@
+.env
+data/
+*.log
+data.zip
+wandb/
+.venv/
+outputs/
+logs/
+cloudflared.exe
